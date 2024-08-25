@@ -78,4 +78,46 @@ function playSong() {
     const song = document.getElementById('birthdaySong');
     song.play();
 }
+document.getElementById('videoOverlay').addEventListener('click', function() {
+    var video = document.getElementById('birthdayVideo');
+    video.play(); // Intentar reproducir el video primero
+    video.setAttribute("controls", "controls"); // Asegurarse de que los controles se muestren
+    this.style.opacity = '0'; // Iniciar la transición de opacidad
+    setTimeout(() => {
+        this.style.display = 'none'; // Ocultar la superposición después de la transición
+    }, 300); // Tiempo de espera igual al de la transición en CSS
+});
+
+
+// Obtener los elementos de audio y el botón
+const birthdaySong = document.getElementById('birthdaySong');
+const playSongButton = document.getElementById('playSongButton');
+
+// Agregar un evento de clic al botón
+playSongButton.addEventListener('click', () => {
+    if (birthdaySong.paused) {
+        birthdaySong.play();
+        playSongButton.textContent = 'Te la dedico :3'; // Cambiar el texto del botón
+    } else {
+        birthdaySong.pause();
+        playSongButton.textContent = 'Te la dedico :3'; // Cambiar el texto del botón
+    }
+});
+
+const bubbleSound = document.getElementById('bubbleSound');
+
+function playBubbleSound() {
+    bubbleSound.play();
+}
+
+function nextSlide() {
+    // Tu código para cambiar la diapositiva
+    playBubbleSound();
+}
+
+function prevSlide() {
+    // Tu código para cambiar la diapositiva
+    playBubbleSound();
+}
+
 

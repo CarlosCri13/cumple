@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <audio id="bubbleSound">
+        <source src="bubble-sound.mp3" type="audio/mp3">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    
     <div id="fireworks"></div>
     <div class="scroll-container">
         <header>
-            <h1 class="animated-text">Feliz cunmpleños a mi princesa!</h1>
+            <h1 class="animated-text">
+                <span>Feliz</span> 
+                <span>cumpleaños</span> 
+                <span>a</span> 
+                <span>mi</span> 
+                <span>princesa!</span>
+            </h1>
         </header>
+        
         <main>
             <div class="carousel-container">
                 <div class="carousel">
@@ -41,26 +54,41 @@
     <audio id="birthdaySong" autoplay loop>
         <source src="fondo.mp3" type="audio/mp3">
     </audio>
-    <script src="script.js"></script>
+   
 
     <main>
         <!-- Carrusel de imágenes -->
         <div class="carousel-container">
             <!-- (Contenido del carrusel) -->
         </div>
-    
+        <center>
+            <h1>Te Deseo Lo Mejor!</h1>
+
+        </center>
+       
         <!-- Sección de Video -->
         <div class="video-container">
-            <h2 class="video-title">Te deseo lo mejor </h2>
-            <video controls>
+           
+            <div class="video-overlay" id="videoOverlay">
+                <p>Abrir</p>
+                <div class="detail-circle small one"></div>
+                <div class="detail-circle large two"></div>
+                <div class="detail-circle small three"></div>
+            </div>
+            <video id="birthdayVideo" controls>
                 <source src="video.mp4" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
             </video>
         </div>
+        
+        
+        
          <!-- Botón para reproducir la canción -->
-         <div class="button-container">
-            <button id="playSongButton" onclick="playSong()">🎵 Te la dedico :3 🎵</button>
-        </div>
+         <!-- Botón para reproducir la canción -->
+<div class="button-container">
+    <button id="playSongButton">Te la dedico :3</button>
+</div>
+
     </main>
     
 
@@ -68,4 +96,5 @@
 
 
 </body>
+<script src="script.js"></script>
 </html>
