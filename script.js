@@ -1,31 +1,3 @@
-function showMessage() {
-    alert('¡Feliz cumpleaños! Que todos tus deseos se hagan realidad 🎉');
-}
-document.querySelectorAll('.gallery img').forEach(image => {
-    image.addEventListener('click', () => {
-        const src = image.getAttribute('src');
-        const modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
-        document.body.appendChild(modal);
-        modal.addEventListener('click', () => modal.remove());
-    });
-});
-function showMessage(imageAlt, message) {
-    const messageBox = document.getElementById('messageBox');
-    const messageImage = document.getElementById('messageImage');
-    const messageText = document.getElementById('messageText');
-
-    messageImage.src = `imagenes/${imageAlt.toLowerCase().replace(/\s/g, '')}.jpg`; // Ruta de la imagen nueva
-    messageText.textContent = message;
-
-    messageBox.style.display = 'block';
-}
-
-function closeMessage() {
-    const messageBox = document.getElementById('messageBox');
-    messageBox.style.display = 'none';
-}
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -51,6 +23,7 @@ function prevSlide() {
 
 // Inicializa el carrusel
 showSlide(currentSlide);
+
 document.addEventListener('DOMContentLoaded', () => {
     createFireworks(50); // Número de partículas de brillo
 
@@ -78,6 +51,7 @@ function playSong() {
     const song = document.getElementById('birthdaySong');
     song.play();
 }
+
 document.getElementById('videoOverlay').addEventListener('click', function() {
     var video = document.getElementById('birthdayVideo');
     video.play(); // Intentar reproducir el video primero
@@ -87,7 +61,6 @@ document.getElementById('videoOverlay').addEventListener('click', function() {
         this.style.display = 'none'; // Ocultar la superposición después de la transición
     }, 300); // Tiempo de espera igual al de la transición en CSS
 });
-
 
 // Obtener los elementos de audio y el botón
 const birthdaySong = document.getElementById('birthdaySong');
@@ -104,20 +77,10 @@ playSongButton.addEventListener('click', () => {
     }
 });
 
-const bubbleSound = document.getElementById('bubbleSound');
 
-function playBubbleSound() {
-    bubbleSound.play();
-}
-
-function nextSlide() {
-    // Tu código para cambiar la diapositiva
-    playBubbleSound();
-}
-
-function prevSlide() {
-    // Tu código para cambiar la diapositiva
-    playBubbleSound();
-}
-
-
+document.getElementById('videoOverlay').addEventListener('click', function() {
+    var video = document.getElementById('birthdayVideo');
+    video.play(); // Intentar reproducir el video
+    video.setAttribute("controls", "controls"); // Asegurarse de que los controles se muestren
+    this.classList.add('hidden'); // Ocultar la superposición suavemente
+});

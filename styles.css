@@ -1,3 +1,31 @@
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    video {
+        max-height: 250px; /* Reduce la altura máxima en dispositivos más pequeños */
+    }
+
+    .video-overlay {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    video {
+        max-height: 200px; /* Ajusta aún más la altura para pantallas pequeñas */
+    }
+
+    .video-overlay {
+        font-size: 18px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Estilos generales para todos los dispositivos */
 body {
     font-family: 'Arial', sans-serif;
@@ -105,8 +133,8 @@ video {
     width: 100%;
     height: auto;
     border-radius: 10px;
-
     max-height: 400px; /* Limita la altura máxima del video */
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor */
 }
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
@@ -226,7 +254,7 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000; /* Fondo negro sólido */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,6 +264,7 @@ video {
     cursor: pointer;
     z-index: 2;
     box-shadow: 0 0 20px #ff69b4 inset; /* Sombra rosa interna */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para la opacidad */
 }
 
 .video-overlay p {
@@ -357,3 +386,18 @@ video {
         font-size: 18px;
     }
 }
+
+
+.video-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-overlay p {
+    margin: 0;
+    text-shadow: 2px 2px 4px #000000; /* Sombra negra para el texto */
+}
+
+
+
+
