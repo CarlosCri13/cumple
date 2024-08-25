@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiesta de Cumpleaños</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="fireworks"></div>
+    <div class="scroll-container">
+        <header>
+            <h1 class="animated-text">Feliz cunmpleños a mi princesa!</h1>
+        </header>
+        <main>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="1.jpeg" alt="Foto 1">
+                        <p class="message">¡Feliz Cumpleaños! un dia como hoy ...</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="2.jpeg" alt="Foto 2">
+                        <p class="message">Nació mi princesa favorita 👸</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="3.jpeg" alt="Foto 3">
+                        <p class="message">Princesa que amo con todo mi corazón💕 </p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="4.jpeg" alt="Foto 4">
+                        <p class="message">¡Te amo! Feliz Cumpleaños mi vida y adoro que seas mi princesa</p>
+                    </div>
+                </div>
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </main>
+        
+    </div>
+    <audio id="birthdaySong" autoplay loop>
+        <source src="fondo.mp3" type="audio/mp3">
+    </audio>
+    <script src="script.js"></script>
+
+    <main>
+        <!-- Carrusel de imágenes -->
+        <div class="carousel-container">
+            <!-- (Contenido del carrusel) -->
+        </div>
+    
+        <!-- Sección de Video -->
+        <div class="video-container">
+            <h2 class="video-title">Te deseo lo mejor </h2>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+         <!-- Botón para reproducir la canción -->
+         <div class="button-container">
+            <button id="playSongButton" onclick="playSong()">🎵 Te la dedico :3 🎵</button>
+        </div>
+    </main>
+    
+
+
+
+
+</body>
+</html>
