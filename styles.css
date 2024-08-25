@@ -33,8 +33,7 @@ header {
     margin: 50px auto;
     overflow: hidden;
     border-radius: 10px;
-   box-shadow: 0 0 20px #ff69b4; /* Sombra rosa alrededor */
-    
+    box-shadow: 0 0 20px #ff69b4; /* Sombra rosa alrededor */
 }
 
 .carousel {
@@ -53,6 +52,7 @@ header {
 .carousel-item img {
     max-width: 100%;
     border-radius: 10px;
+    height: auto;
 }
 
 .carousel-item .message {
@@ -89,11 +89,10 @@ header {
 .video-container {
     text-align: center;
     margin: 50px auto;
-    max-width: 800px;
     position: relative;
     width: 100%;
-    max-width: 600px; /* Ajusta según sea necesario */
-    margin: auto;
+    max-width: 800px; /* Ajusta según sea necesario */
+    padding: 0 10px;
 }
 
 .video-title {
@@ -104,58 +103,31 @@ header {
 
 video {
     width: 100%;
-    max-width: 800px;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 20px #ff69b4 inset; /* Sombra rosa interna */
-}
 
+    max-height: 400px; /* Limita la altura máxima del video */
+}
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
-    .carousel-container {
-        max-width: 100%;
-        margin: 20px auto;
-    }
-
     .video-container {
         margin: 20px auto;
         max-width: 100%;
         padding: 0 10px;
     }
 
-    .video-title {
-        font-size: 1.5rem;
-    }
-
-    header {
-        padding: 15px;
-    }
-
-    .animated-text {
-        font-size: 1.8rem;
-    }
-
-    .prev, .next {
-        padding: 5px;
-    }
-
-    .message-box {
-        padding: 15px;
-    }
-
-    .message-box img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .message-box p {
-        font-size: 1rem;
-    }
-
-    .message-box button {
-        padding: 8px 16px;
-        font-size: 1rem;
+    video {
+        max-height: 250px; /* Reduce la altura máxima en dispositivos más pequeños */
     }
 }
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    video {
+        max-height: 200px; /* Ajusta aún más la altura para pantallas pequeñas */
+    }
+}
+
 #fireworks {
     position: fixed;
     top: 0;
@@ -303,14 +275,85 @@ video {
     transform: translateX(-50%);
 }
 
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+        margin: 20px auto;
+    }
 
+    .video-container {
+        margin: 20px auto;
+        max-width: 100%;
+        padding: 0 10px;
+    }
 
+    .video-title {
+        font-size: 1.5rem;
+    }
 
-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    box-shadow: 0 0 20px #ff69b4 inset; /* Sombra rosa interna */
+    header {
+        padding: 15px;
+    }
+
+    .animated-text {
+        font-size: 1.8rem;
+    }
+
+    .prev, .next {
+        padding: 5px;
+    }
+
+    .carousel-item {
+        padding: 10px;
+    }
+
+    .carousel-item .message {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        margin: 10px 0;
+    }
+
+    #playSongButton {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .video-overlay {
+        font-size: 24px;
+    }
 }
 
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 1.5rem;
+    }
 
+    .carousel-item {
+        padding: 5px;
+    }
+
+    .carousel-item .message {
+        font-size: 0.9rem;
+    }
+
+    .prev, .next {
+        padding: 3px;
+    }
+
+    .button-container {
+        margin: 5px 0;
+    }
+
+    #playSongButton {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .video-overlay {
+        font-size: 18px;
+    }
+}
